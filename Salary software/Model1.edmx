@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище gr682_gnmModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AddressBD">
+          <Key>
+            <PropertyRef Name="ID_Address" />
+          </Key>
+          <Property Name="ID_Address" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Street" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Home" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Flat" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Indexx" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DATA">
+          <Key>
+            <PropertyRef Name="ID_DATA" />
+          </Key>
+          <Property Name="ID_DATA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName_person" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName_person" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName_person" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PassportSeries" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="NumberPassport" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="CountChildren" Type="int" Nullable="false" />
+          <Property Name="Birthday" Type="date" Nullable="false" />
+          <Property Name="NumberTelephone" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="POLID" Type="int" Nullable="false" />
+          <Property Name="PositionID" Type="int" Nullable="false" />
+          <Property Name="AddressID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDTable" Type="int" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CreateAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="ID_Organization" />
+          </Key>
+          <Property Name="ID_Organization" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameOrg" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="INN" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="OGRN" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="IMNS" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="COD" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="KPP" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="OKTMO" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="OKPO" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="AddressID" Type="int" Nullable="false" />
+          <Property Name="TypesTaxesID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="ID_Payments" />
+          </Key>
+          <Property Name="ID_Payments" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NDFL" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PFR" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="FSS" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Premiya" Type="money" Nullable="false" />
+          <Property Name="NaRuki" Type="money" Nullable="false" />
+          <Property Name="DayRate" Type="money" Nullable="false" />
+          <Property Name="CountDay" Type="int" Nullable="false" />
+          <Property Name="Nachisleno" Type="money" Nullable="false" />
+          <Property Name="ZPTaxes" Type="money" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="DATAID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personbd">
+          <Key>
+            <PropertyRef Name="ID_Person" />
+          </Key>
+          <Property Name="ID_Person" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName_person" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName_person" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName_person" Type="nvarchar" MaxLength="50" />
+          <Property Name="IDReg" Type="int" Nullable="false" />
+          <Property Name="IDRole" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pol">
+          <Key>
+            <PropertyRef Name="ID_POL" />
+          </Key>
+          <Property Name="ID_POL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="POL" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID_Position" />
+          </Key>
+          <Property Name="ID_Position" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Position" Type="nvarchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reg">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID_Role" />
+          </Key>
+          <Property Name="ID_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sotrudnik">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Oklad" Type="float" Nullable="false" />
+          <Property Name="DR" Type="datetime" Nullable="false" />
+          <Property Name="DP" Type="datetime" Nullable="false" />
+          <Property Name="Pol" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Kolvodet" Type="int" Nullable="false" />
+          <Property Name="ID_FIO" Type="int" />
+        </EntityType>
+        <EntityType Name="Typestaxes">
+          <Key>
+            <PropertyRef Name="ID_TypesTaxes" />
+          </Key>
+          <Property Name="ID_TypesTaxes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypesTaxes" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tarif" Type="float" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__DATA__AddressID__2B2A60FE">
+          <End Role="AddressBD" Type="Self.AddressBD" Multiplicity="1" />
+          <End Role="DATA" Type="Self.DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressBD">
+              <PropertyRef Name="ID_Address" />
+            </Principal>
+            <Dependent Role="DATA">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DATA__POLID__2942188C">
+          <End Role="Pol" Type="Self.Pol" Multiplicity="1" />
+          <End Role="DATA" Type="Self.DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pol">
+              <PropertyRef Name="ID_POL" />
+            </Principal>
+            <Dependent Role="DATA">
+              <PropertyRef Name="POLID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DATA__PositionID__2A363CC5">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="DATA" Type="Self.DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="ID_Position" />
+            </Principal>
+            <Dependent Role="DATA">
+              <PropertyRef Name="PositionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Organizat__Addre__7C6F7215">
+          <End Role="AddressBD" Type="Self.AddressBD" Multiplicity="1" />
+          <End Role="Organization" Type="Self.Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressBD">
+              <PropertyRef Name="ID_Address" />
+            </Principal>
+            <Dependent Role="Organization">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Organizat__Types__7D63964E">
+          <End Role="Typestaxes" Type="Self.Typestaxes" Multiplicity="1" />
+          <End Role="Organization" Type="Self.Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Typestaxes">
+              <PropertyRef Name="ID_TypesTaxes" />
+            </Principal>
+            <Dependent Role="Organization">
+              <PropertyRef Name="TypesTaxesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonBD__IDReg__6F1576F7">
+          <End Role="Reg" Type="Self.Reg" Multiplicity="1" />
+          <End Role="Personbd" Type="Self.Personbd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reg">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Personbd">
+              <PropertyRef Name="IDReg" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonBD__IDRole__70099B30">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Personbd" Type="Self.Personbd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Personbd">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище gr682_gnmModelContainer">
+          <EntitySet Name="AddressBD" EntityType="Self.AddressBD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DATA" EntityType="Self.DATA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personbd" EntityType="Self.Personbd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pol" EntityType="Self.Pol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reg" EntityType="Self.Reg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sotrudnik" EntityType="Self.Sotrudnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Typestaxes" EntityType="Self.Typestaxes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__DATA__AddressID__2B2A60FE" Association="Self.FK__DATA__AddressID__2B2A60FE">
+            <End Role="AddressBD" EntitySet="AddressBD" />
+            <End Role="DATA" EntitySet="DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DATA__POLID__2942188C" Association="Self.FK__DATA__POLID__2942188C">
+            <End Role="Pol" EntitySet="Pol" />
+            <End Role="DATA" EntitySet="DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DATA__PositionID__2A363CC5" Association="Self.FK__DATA__PositionID__2A363CC5">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="DATA" EntitySet="DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Organizat__Addre__7C6F7215" Association="Self.FK__Organizat__Addre__7C6F7215">
+            <End Role="AddressBD" EntitySet="AddressBD" />
+            <End Role="Organization" EntitySet="Organization" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Organizat__Types__7D63964E" Association="Self.FK__Organizat__Types__7D63964E">
+            <End Role="Typestaxes" EntitySet="Typestaxes" />
+            <End Role="Organization" EntitySet="Organization" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonBD__IDReg__6F1576F7" Association="Self.FK__PersonBD__IDReg__6F1576F7">
+            <End Role="Reg" EntitySet="Reg" />
+            <End Role="Personbd" EntitySet="Personbd" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonBD__IDRole__70099B30" Association="Self.FK__PersonBD__IDRole__70099B30">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Personbd" EntitySet="Personbd" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gr682_gnmModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AddressBD">
+          <Key>
+            <PropertyRef Name="ID_Address" />
+          </Key>
+          <Property Name="ID_Address" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Home" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Flat" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Indexx" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="DATA" Relationship="Self.FK__DATA__AddressID__23893F36" FromRole="AddressBD" ToRole="DATA" />
+          <NavigationProperty Name="Organization" Relationship="Self.FK__Organizat__Addre__7C6F7215" FromRole="AddressBD" ToRole="Organization" />
+        </EntityType>
+        <EntityType Name="DATA">
+          <Key>
+            <PropertyRef Name="ID_DATA" />
+          </Key>
+          <Property Name="ID_DATA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName_person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName_person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName_person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PassportSeries" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NumberPassport" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CountChildren" Type="Int32" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NumberTelephone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="POLID" Type="Int32" Nullable="false" />
+          <Property Name="PositionID" Type="Int32" Nullable="false" />
+          <Property Name="AddressID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AddressBD" Relationship="Self.FK__DATA__AddressID__23893F36" FromRole="DATA" ToRole="AddressBD" />
+          <NavigationProperty Name="Pol" Relationship="Self.FK__DATA__POLID__21A0F6C4" FromRole="DATA" ToRole="Pol" />
+          <NavigationProperty Name="Position" Relationship="Self.FK__DATA__PositionID__22951AFD" FromRole="DATA" ToRole="Position" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK__Payments__DATAID__2665ABE1" FromRole="DATA" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDTable" Type="Int32" Nullable="false" />
+          <Property Name="Operation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="ID_Organization" />
+          </Key>
+          <Property Name="ID_Organization" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOrg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INN" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OGRN" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IMNS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="COD" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KPP" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OKTMO" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OKPO" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddressID" Type="Int32" Nullable="false" />
+          <Property Name="TypesTaxesID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AddressBD" Relationship="Self.FK__Organizat__Addre__7C6F7215" FromRole="Organization" ToRole="AddressBD" />
+          <NavigationProperty Name="Typestaxes" Relationship="Self.FK__Organizat__Types__7D63964E" FromRole="Organization" ToRole="Typestaxes" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="ID_Payments" />
+          </Key>
+          <Property Name="ID_Payments" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NDFL" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PFR" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="FSS" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Premiya" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="NaRuki" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DayRate" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="CountDay" Type="Int32" Nullable="false" />
+          <Property Name="Nachisleno" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="ZPTaxes" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DATAID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DATA" Relationship="Self.FK__Payments__DATAID__2665ABE1" FromRole="Payments" ToRole="DATA" />
+        </EntityType>
+        <EntityType Name="Personbd">
+          <Key>
+            <PropertyRef Name="ID_Person" />
+          </Key>
+          <Property Name="ID_Person" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName_person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName_person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName_person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IDReg" Type="Int32" Nullable="false" />
+          <Property Name="IDRole" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Reg" Relationship="Self.FK__PersonBD__IDReg__6F1576F7" FromRole="Personbd" ToRole="Reg" />
+          <NavigationProperty Name="Role" Relationship="Self.FK__PersonBD__IDRole__70099B30" FromRole="Personbd" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="Pol">
+          <Key>
+            <PropertyRef Name="ID_POL" />
+          </Key>
+          <Property Name="ID_POL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="POL1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="DATA" Relationship="Self.FK__DATA__POLID__21A0F6C4" FromRole="Pol" ToRole="DATA" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID_Position" />
+          </Key>
+          <Property Name="ID_Position" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Position1" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="DATA" Relationship="Self.FK__DATA__PositionID__22951AFD" FromRole="Position" ToRole="DATA" />
+        </EntityType>
+        <EntityType Name="Reg">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Personbd" Relationship="Self.FK__PersonBD__IDReg__6F1576F7" FromRole="Reg" ToRole="Personbd" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID_Role" />
+          </Key>
+          <Property Name="ID_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Personbd" Relationship="Self.FK__PersonBD__IDRole__70099B30" FromRole="Role" ToRole="Personbd" />
+        </EntityType>
+        <EntityType Name="Sotrudnik">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Oklad" Type="Double" Nullable="false" />
+          <Property Name="DR" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DP" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Pol" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kolvodet" Type="Int32" Nullable="false" />
+          <Property Name="ID_FIO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Typestaxes">
+          <Key>
+            <PropertyRef Name="ID_TypesTaxes" />
+          </Key>
+          <Property Name="ID_TypesTaxes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypesTaxes1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tarif" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Organization" Relationship="Self.FK__Organizat__Types__7D63964E" FromRole="Typestaxes" ToRole="Organization" />
+        </EntityType>
+        <Association Name="FK__DATA__AddressID__23893F36">
+          <End Role="AddressBD" Type="Self.AddressBD" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DATA" Type="Self.DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressBD">
+              <PropertyRef Name="ID_Address" />
+            </Principal>
+            <Dependent Role="DATA">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Organizat__Addre__7C6F7215">
+          <End Role="AddressBD" Type="Self.AddressBD" Multiplicity="1" />
+          <End Role="Organization" Type="Self.Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressBD">
+              <PropertyRef Name="ID_Address" />
+            </Principal>
+            <Dependent Role="Organization">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DATA__POLID__21A0F6C4">
+          <End Role="Pol" Type="Self.Pol" Multiplicity="1" />
+          <End Role="DATA" Type="Self.DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pol">
+              <PropertyRef Name="ID_POL" />
+            </Principal>
+            <Dependent Role="DATA">
+              <PropertyRef Name="POLID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DATA__PositionID__22951AFD">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="DATA" Type="Self.DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="ID_Position" />
+            </Principal>
+            <Dependent Role="DATA">
+              <PropertyRef Name="PositionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Payments__DATAID__2665ABE1">
+          <End Role="DATA" Type="Self.DATA" Multiplicity="1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DATA">
+              <PropertyRef Name="ID_DATA" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="DATAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Organizat__Types__7D63964E">
+          <End Role="Typestaxes" Type="Self.Typestaxes" Multiplicity="1" />
+          <End Role="Organization" Type="Self.Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Typestaxes">
+              <PropertyRef Name="ID_TypesTaxes" />
+            </Principal>
+            <Dependent Role="Organization">
+              <PropertyRef Name="TypesTaxesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonBD__IDReg__6F1576F7">
+          <End Role="Reg" Type="Self.Reg" Multiplicity="1" />
+          <End Role="Personbd" Type="Self.Personbd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reg">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Personbd">
+              <PropertyRef Name="IDReg" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PersonBD__IDRole__70099B30">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Personbd" Type="Self.Personbd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="Personbd">
+              <PropertyRef Name="IDRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="gr682_gnmEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AddressBD" EntityType="Self.AddressBD" />
+          <EntitySet Name="DATA" EntityType="Self.DATA" />
+          <EntitySet Name="History" EntityType="Self.History" />
+          <EntitySet Name="Organization" EntityType="Self.Organization" />
+          <EntitySet Name="Payments" EntityType="Self.Payments" />
+          <EntitySet Name="Personbd" EntityType="Self.Personbd" />
+          <EntitySet Name="Pol" EntityType="Self.Pol" />
+          <EntitySet Name="Position" EntityType="Self.Position" />
+          <EntitySet Name="Reg" EntityType="Self.Reg" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Sotrudnik" EntityType="Self.Sotrudnik" />
+          <EntitySet Name="Typestaxes" EntityType="Self.Typestaxes" />
+          <AssociationSet Name="FK__DATA__AddressID__23893F36" Association="Self.FK__DATA__AddressID__23893F36">
+            <End Role="AddressBD" EntitySet="AddressBD" />
+            <End Role="DATA" EntitySet="DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Organizat__Addre__7C6F7215" Association="Self.FK__Organizat__Addre__7C6F7215">
+            <End Role="AddressBD" EntitySet="AddressBD" />
+            <End Role="Organization" EntitySet="Organization" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DATA__POLID__21A0F6C4" Association="Self.FK__DATA__POLID__21A0F6C4">
+            <End Role="Pol" EntitySet="Pol" />
+            <End Role="DATA" EntitySet="DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DATA__PositionID__22951AFD" Association="Self.FK__DATA__PositionID__22951AFD">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="DATA" EntitySet="DATA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__DATAID__2665ABE1" Association="Self.FK__Payments__DATAID__2665ABE1">
+            <End Role="DATA" EntitySet="DATA" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Organizat__Types__7D63964E" Association="Self.FK__Organizat__Types__7D63964E">
+            <End Role="Typestaxes" EntitySet="Typestaxes" />
+            <End Role="Organization" EntitySet="Organization" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonBD__IDReg__6F1576F7" Association="Self.FK__PersonBD__IDReg__6F1576F7">
+            <End Role="Reg" EntitySet="Reg" />
+            <End Role="Personbd" EntitySet="Personbd" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PersonBD__IDRole__70099B30" Association="Self.FK__PersonBD__IDRole__70099B30">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Personbd" EntitySet="Personbd" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище gr682_gnmModelContainer" CdmEntityContainer="gr682_gnmEntities">
+          <EntitySetMapping Name="AddressBD">
+            <EntityTypeMapping TypeName="gr682_gnmModel.AddressBD">
+              <MappingFragment StoreEntitySet="AddressBD">
+                <ScalarProperty Name="ID_Address" ColumnName="ID_Address" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Home" ColumnName="Home" />
+                <ScalarProperty Name="Flat" ColumnName="Flat" />
+                <ScalarProperty Name="Indexx" ColumnName="Indexx" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DATA">
+            <EntityTypeMapping TypeName="gr682_gnmModel.DATA">
+              <MappingFragment StoreEntitySet="DATA">
+                <ScalarProperty Name="ID_DATA" ColumnName="ID_DATA" />
+                <ScalarProperty Name="LastName_person" ColumnName="LastName_person" />
+                <ScalarProperty Name="FirstName_person" ColumnName="FirstName_person" />
+                <ScalarProperty Name="MiddleName_person" ColumnName="MiddleName_person" />
+                <ScalarProperty Name="PassportSeries" ColumnName="PassportSeries" />
+                <ScalarProperty Name="NumberPassport" ColumnName="NumberPassport" />
+                <ScalarProperty Name="CountChildren" ColumnName="CountChildren" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="NumberTelephone" ColumnName="NumberTelephone" />
+                <ScalarProperty Name="POLID" ColumnName="POLID" />
+                <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="History">
+            <EntityTypeMapping TypeName="gr682_gnmModel.History">
+              <MappingFragment StoreEntitySet="History">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IDTable" ColumnName="IDTable" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organization">
+            <EntityTypeMapping TypeName="gr682_gnmModel.Organization">
+              <MappingFragment StoreEntitySet="Organization">
+                <ScalarProperty Name="ID_Organization" ColumnName="ID_Organization" />
+                <ScalarProperty Name="NameOrg" ColumnName="NameOrg" />
+                <ScalarProperty Name="INN" ColumnName="INN" />
+                <ScalarProperty Name="OGRN" ColumnName="OGRN" />
+                <ScalarProperty Name="IMNS" ColumnName="IMNS" />
+                <ScalarProperty Name="COD" ColumnName="COD" />
+                <ScalarProperty Name="KPP" ColumnName="KPP" />
+                <ScalarProperty Name="OKTMO" ColumnName="OKTMO" />
+                <ScalarProperty Name="OKPO" ColumnName="OKPO" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="TypesTaxesID" ColumnName="TypesTaxesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="gr682_gnmModel.Payments">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="ID_Payments" ColumnName="ID_Payments" />
+                <ScalarProperty Name="NDFL" ColumnName="NDFL" />
+                <ScalarProperty Name="PFR" ColumnName="PFR" />
+                <ScalarProperty Name="FSS" ColumnName="FSS" />
+                <ScalarProperty Name="Premiya" ColumnName="Premiya" />
+                <ScalarProperty Name="NaRuki" ColumnName="NaRuki" />
+                <ScalarProperty Name="DayRate" ColumnName="DayRate" />
+                <ScalarProperty Name="CountDay" ColumnName="CountDay" />
+                <ScalarProperty Name="Nachisleno" ColumnName="Nachisleno" />
+                <ScalarProperty Name="ZPTaxes" ColumnName="ZPTaxes" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="DATAID" ColumnName="DATAID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personbd">
+            <EntityTypeMapping TypeName="gr682_gnmModel.Personbd">
+              <MappingFragment StoreEntitySet="Personbd">
+                <ScalarProperty Name="ID_Person" ColumnName="ID_Person" />
+                <ScalarProperty Name="LastName_person" ColumnName="LastName_person" />
+                <ScalarProperty Name="FirstName_person" ColumnName="FirstName_person" />
+                <ScalarProperty Name="MiddleName_person" ColumnName="MiddleName_person" />
+                <ScalarProperty Name="IDReg" ColumnName="IDReg" />
+                <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pol">
+            <EntityTypeMapping TypeName="gr682_gnmModel.Pol">
+              <MappingFragment StoreEntitySet="Pol">
+                <ScalarProperty Name="ID_POL" ColumnName="ID_POL" />
+                <ScalarProperty Name="POL1" ColumnName="POL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Position">
+            <EntityTypeMapping TypeName="gr682_gnmModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+                <ScalarProperty Name="Position1" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reg">
+            <EntityTypeMapping TypeName="gr682_gnmModel.Reg">
+              <MappingFragment StoreEntitySet="Reg">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="gr682_gnmModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sotrudnik">
+            <EntityTypeMapping TypeName="gr682_gnmModel.Sotrudnik">
+              <MappingFragment StoreEntitySet="Sotrudnik">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Oklad" ColumnName="Oklad" />
+                <ScalarProperty Name="DR" ColumnName="DR" />
+                <ScalarProperty Name="DP" ColumnName="DP" />
+                <ScalarProperty Name="Pol" ColumnName="Pol" />
+                <ScalarProperty Name="Kolvodet" ColumnName="Kolvodet" />
+                <ScalarProperty Name="ID_FIO" ColumnName="ID_FIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Typestaxes">
+            <EntityTypeMapping TypeName="gr682_gnmModel.Typestaxes">
+              <MappingFragment StoreEntitySet="Typestaxes">
+                <ScalarProperty Name="ID_TypesTaxes" ColumnName="ID_TypesTaxes" />
+                <ScalarProperty Name="TypesTaxes1" ColumnName="TypesTaxes" />
+                <ScalarProperty Name="Tarif" ColumnName="Tarif" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

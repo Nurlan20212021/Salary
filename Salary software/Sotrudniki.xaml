@@ -1,0 +1,37 @@
+﻿<Window x:Class="Salary_software.Sotrudniki"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Salary_software"
+        mc:Ignorable="d"
+        Icon="Pictures/Calculator.jpg"
+        Title="Сотрудники компании" Height="541" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid >
+        <Grid Background="#FFF5EFC9">
+            <DataGrid Name="dtSot" HorizontalAlignment="Left" Height="233" Margin="10,256,0,0" VerticalAlignment="Top" Width="763" SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="True">
+            </DataGrid>
+            <TextBox x:Name="LastName" materialDesign:HintAssist.Hint="      Фамилия" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="70,26,615,432" FontSize="14"/>
+            <TextBox x:Name="FirstName" materialDesign:HintAssist.Hint="          Имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="70,83,615,376" FontSize="14"/>
+            <TextBox x:Name="MiddleName" materialDesign:HintAssist.Hint="      Отчество" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="70,136,615,322" FontSize="14"/>
+            <ComboBox Name="ComboDol" FontFamily="Times New Roman" FontSize="18" HorizontalAlignment="Left" Margin="207,40,0,0" VerticalAlignment="Top" Width="107" DisplayMemberPath="Position" SelectedValuePath="Position"/>
+            <DatePicker x:Name="Birthday" HorizontalAlignment="Left" Margin="207,93,0,0" VerticalAlignment="Top" Height="33" Width="107"/>
+            <ComboBox Name="Combo" FontFamily="Times New Roman" FontSize="18" HorizontalAlignment="Left" Margin="207,150,0,0" VerticalAlignment="Top" Width="107" DisplayMemberPath="POL" SelectedValuePath="POL"/>
+            <TextBox x:Name="Series" materialDesign:HintAssist.Hint="    Серия" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="354,26,365,432" FontSize="14"/>
+            <TextBox x:Name="Number" materialDesign:HintAssist.Hint="    Номер" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="466,26,250,432" FontSize="14"/>
+            <TextBox x:Name="NumberTelephone" materialDesign:HintAssist.Hint="    Номер телефона" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="572,26,58,432" FontSize="14"/>
+            <TextBox x:Name="CountChildren" materialDesign:HintAssist.Hint="  Количество детей" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="466,136,183,322" FontSize="14"/>
+            <Button Content="Адрес" HorizontalAlignment="Left" Margin="354,94,0,0" VerticalAlignment="Top" Width="75" Background="White" Click="Button_Click"/>
+            <Button Content="Добавить" HorizontalAlignment="Left" Margin="140,210,0,0" VerticalAlignment="Top" Width="102" Background="#FF13D313" Click="Button_Insert"/>
+            <Button Content="Удалить" HorizontalAlignment="Left" Margin="354,210,0,0" VerticalAlignment="Top" Width="102" Background="Red" Click="Button_Delete"/>
+            <Button Content="Обновить" HorizontalAlignment="Left" Margin="560,210,0,0" VerticalAlignment="Top" Width="102" Background="SkyBlue" Click="Button_Update"/>
+            <!--<Button x:Name="button" HorizontalAlignment="Left" Margin="687,210,0,0" VerticalAlignment="Top" Width="83" Background="White" Click="export_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Pictures/Excel.jpg" Margin="0,0,5,0" Width="53" />
+                </StackPanel>
+            </Button>-->
+        </Grid>
+        <Button Content="Должности" HorizontalAlignment="Left" Margin="628,157,0,0" VerticalAlignment="Top" Width="137" Height="33" Click="Dol" Background="White"/>
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿<Window x:Class="Salary_software.Auth"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Salary_software"
+        mc:Ignorable="d"
+        Icon="Pictures/Calculator.jpg"
+        Title="Авторизация" Height="264.551" Width="502.152" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Height="230" VerticalAlignment="Top">
+            <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" Margin="10. 25. 0. 20"/>
+            <TextBox x:Name="LoginBox" materialDesign:HintAssist.Hint="  Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+            <PasswordBox x:Name="PasswordBox" materialDesign:HintAssist.Hint="  Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+        </StackPanel>
+        <Button HorizontalAlignment="Left" Content="Войти" Click="AuthUserClick" Margin="179,183,0,10" Width="150" RenderTransformOrigin="0.603,0.41" Height="Auto"/>
+        <!--<Button HorizontalAlignment="Left" Content="Зарегистрироваться" Click="RegUserClick" Margin="58,183,0,10" Width="168" RenderTransformOrigin="0.603,0.41" Height="Auto"/>-->
+    </Grid>
+</Window>
